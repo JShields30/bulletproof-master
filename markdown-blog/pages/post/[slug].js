@@ -1,17 +1,23 @@
 import Theme from '../../components/Theme'
 import ms from 'ms'
-import {promises as fsPromises} from 'fs'
+import { promises as fsPromises } from 'fs'
 import Markdown from 'markdown-to-jsx'
+import Youtube from '../../components/Youtube'
 
 export default function Post ({ post }) {
-  fsPromises.readdir('data')
   return (
     <Theme>
       <div className='post'>
         <div className='time'>Published {ms(Date.now() - post.createdAt, { long: true })} ago</div>
         <h1>{post.title}</h1>
         <div className='content'>
-          <Markdown>{post.content}</Markdown>
+          <Markdown
+          options={{
+            overrides: {
+              Youtube: { component: Youtube }
+            }
+          }}
+          >{post.content}</Markdown>
         </div>
       </div>
     </Theme>
@@ -20,6 +26,7 @@ export default function Post ({ post }) {
 
 export async function getStaticPaths () {
   const markdownFiles = await fsPromises.readdir('data')
+  
   const paths = markdownFiles.map(filename => {
     const slug = filename.replace(/.md$/, '')
     return {
