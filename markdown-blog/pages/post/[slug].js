@@ -10,7 +10,7 @@ export default function Post ({ post }) {
         <div className='time'>Published {ms(Date.now() - post.createdAt, { long: true })} ago</div>
         <h1>{post.title}</h1>
         <div className='content'>
-          {post.content}
+          <Markdown>{post.content}</Markdown>
         </div>
       </div>
     </Theme>
