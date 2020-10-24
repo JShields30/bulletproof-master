@@ -1,0 +1,8 @@
+{
+  "name": "bulletproof-master",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/JShields30/bulletproof-master.git",
+  "author": "Joe Shields <shields.john.joseph@gmail.com>",
+  "license": "MIT"
+}
