@@ -2,5 +2,23 @@
   "name": "server-rendering-a-github-repo",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "markdown-to-jsx": "^6.11.4",
+    "ms": "^2.1.2",
+    "next": "9.5.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+},
+"scripts": {
+  "dev": "next -p 3009",
+  "build": "next build",
+  "start": "next start -p 3009",
+  "lint": "standard"
+},
+"devDependencies": {
+  "standard": "^14.3.4"
+  }
 }
+
+
